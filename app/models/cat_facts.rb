@@ -1,10 +1,10 @@
 class CatFacts
   def self.intro
-    "Congratulations! You're subscribed to Cat Facts! You'll be recieving fun daily facts about CATS! "
+    "Thanks for subscribing to Cat Facts! You'll be recieving fun daily facts about CATS! "
   end
 
   def self.invalid_command(msg = "")
-    "&lt Command '#{msg}' not recognized. &gt "
+    "Command '#{msg}' not recognized. "
   end
 
   def self.unsubscribe_msg
@@ -17,5 +17,9 @@ class CatFacts
 
   def self.unsub_string
     "AAA"
+  end
+
+  def random_fact
+    "Did you know? #{Message.all.sample.fact}"
   end
 end
