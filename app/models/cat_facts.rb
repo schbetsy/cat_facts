@@ -16,7 +16,7 @@ class CatFacts
   end
 
   def self.unsub_string
-    "AAA"
+    Faker::Base.regexify(/[a-zA-Z0-9]{12}/)
   end
 
   def random_fact
