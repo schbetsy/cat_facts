@@ -7,7 +7,8 @@ end
 get '/subscribe' do
 	body = params[:Body]
 	user = User.find_or_create_by_phone_number(phone_number: params[:From])
-	user.send_fact("got your text!")
+	message = compile_message
+	user.send_fact(message)
   # erb :twil_gather
 end
 
