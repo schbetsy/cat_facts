@@ -1,10 +1,13 @@
 
 get '/' do
-  redirect to '/subscribe'
+	erb :index
+  # redirect to '/subscribe'
 end
 
 get '/subscribe' do
-  erb :index
+	@body = params[:Body]
+	@sender_num = params[:From]
+  erb :twil_gather
 end
 
 post '/user_input' do
