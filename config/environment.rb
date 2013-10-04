@@ -37,9 +37,9 @@ require APP_ROOT.join('config', 'database')
 
 
 # Set up Twilio
-env_config = YAML.load_file(APP_ROOT.join('config', 'twilio.yaml'))
+# env_config = YAML.load_file(APP_ROOT.join('config', 'twilio.yaml'))
 
-env_config.each do |key, value|
-  ENV[key] = value
-end
+# env_config.each do |key, value|
+#   ENV[key] = value
+# end
 
