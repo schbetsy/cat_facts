@@ -1,29 +1,35 @@
 class CatFacts
   def self.intro
-    "Thanks for subscribing to Cat Facts! You'll be recieving fun daily facts about CATS! "
+    "Thanks for subscribing to Cat Facts! You'll be recieving fun hourly facts about CATS! "
   end
 
-  def self.invalid_command
-    "Command not recognized. "
+  def self.msg_start
+    if [true, false, false].sample
+      "Command not recognized. "
+    else
+      "Remember, every time you text, you will receive an instant Cat Fact!"
+    end
+  end
+
+  def self.random_fact
+    "Did you know? #{Message.all.sample.fact}"
+  end
+
+
+  def self.msg_end
+    if [true, false, false].sample
+      self.unsubscribe_msg
+    else
+      " Thanks for choosing Cat Facts!"
+    end
   end
 
   def self.unsubscribe_msg
-    "To unsubscribe, simply reply '#{self.unsub_string}'. "
-  end
-
-  def self.reminder
-    "Remember, every time you text, you will receive an instant Cat Fact!"
-  end
-
-  def self.thanks
-    " Thanks for choosing Cat Facts!"
+    " <To cancel Cat Facts, reply '#{self.unsub_string}'.> "
   end
 
   def self.unsub_string
     Faker::Base.regexify(/[a-zA-Z0-9]{12}/)
   end
 
-  def self.random_fact
-    "Did you know? #{Message.all.sample.fact}"
-  end
 end
