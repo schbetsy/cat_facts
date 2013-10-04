@@ -5,9 +5,10 @@ get '/' do
 end
 
 get '/subscribe' do
-	@body = params[:Body]
-	@sender_num = params[:From]
-  erb :twil_gather
+	body = params[:Body]
+	user = User.create(phone_number: params[:From])
+	# user.send_fact("got your text!")
+  # erb :twil_gather
 end
 
 post '/user_input' do
