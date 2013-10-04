@@ -1,4 +1,8 @@
 class User < ActiveRecord::Base
+
+	def welcome
+		send_fact(CatFacts.intro)
+	end
   
   def send_fact(msg)
 
