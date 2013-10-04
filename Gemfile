@@ -18,8 +18,4 @@ gem 'rake'
 gem 'shotgun'
 
 gem 'twilio-ruby'
-
-group :test do
-  gem 'faker'
-  gem 'rspec'
-end
+gem 'faker'
