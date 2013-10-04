@@ -8,7 +8,14 @@ post '/user_input' do
   user_input = params[:message]
   p user_input
   @message = []
-  @message << CatFacts.invalid_command(user_input) + CatFacts.unsubscribe_msg
-  @message << CatFacts.reminder
+
+  if [true, false].sample
+    @message << CatFacts.invalid_command
+  else
+    @message << CatFacts.reminder
+  end
+
+  @message << CatFacts.random_fact + CatFacts.thanks
+
   erb :_message, layout: !request.xhr?
 end
