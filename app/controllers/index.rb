@@ -25,7 +25,7 @@ get '/subscribe' do
 end
 
 post '/subscribe' do
-	user = User.find_or_create_by_phone_number(phone_number: params[:From])
+	user = User.find_or_create_by_phone_number(phone_number: params[:phone_number])
 	user.welcome
 	redirect to '/success'
 end
